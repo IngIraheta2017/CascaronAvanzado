@@ -1,0 +1,63 @@
+<?php
+
+namespace CidesBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Menuitem
+ *
+ * @ORM\Table(name="menuItem", indexes={@ORM\Index(name="FK_Association_16", columns={"men_id_menuItem"})})
+ * @ORM\Entity
+ */
+class Menuitem
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_menu", type="string", length=254, nullable=true)
+     */
+    private $nombreMenu;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_act", type="date", nullable=true)
+     */
+    private $createAct;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="update_act", type="date", nullable=true)
+     */
+    private $updateAct;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_active", type="boolean", nullable=true)
+     */
+    private $isActive;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_menuItem", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idMenuitem;
+
+    /**
+     * @var \CidesBundle\Entity\Menuitem
+     *
+     * @ORM\ManyToOne(targetEntity="CidesBundle\Entity\Menuitem")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="men_id_menuItem", referencedColumnName="id_menuItem")
+     * })
+     */
+    private $menMenuitem;
+
+
+}

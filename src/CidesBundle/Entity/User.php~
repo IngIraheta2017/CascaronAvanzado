@@ -1,0 +1,133 @@
+<?php
+
+namespace CidesBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * User
+ *
+ * @ORM\Table(name="user", indexes={@ORM\Index(name="FK_Association_21", columns={"id_equipo"})})
+ * @ORM\Entity
+ */
+class User
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_completo", type="string", length=254, nullable=false)
+     */
+    private $nombreCompleto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cargo_institucional", type="string", length=254, nullable=false)
+     */
+    private $cargoInstitucional;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="user_name", type="string", length=32, nullable=false)
+     */
+    private $userName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=254, nullable=false)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=254, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="facultad_pertenece", type="string", length=254, nullable=false)
+     */
+    private $facultadPertenece;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="idioma", type="string", length=254, nullable=true)
+     */
+    private $idioma;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="preparacion_academica", type="string", length=254, nullable=true)
+     */
+    private $preparacionAcademica;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="capacitacion", type="string", length=254, nullable=true)
+     */
+    private $capacitacion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="publicacion", type="text", nullable=true)
+     */
+    private $publicacion;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="is_agree", type="smallint", nullable=false)
+     */
+    private $isAgree;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_act", type="date", nullable=false)
+     */
+    private $createAct;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="update_act", type="date", nullable=false)
+     */
+    private $updateAct;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ponencia", type="string", length=254, nullable=true)
+     */
+    private $ponencia;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_user", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idUser;
+
+    /**
+     * @var \CidesBundle\Entity\Equipo
+     *
+     * @ORM\ManyToOne(targetEntity="CidesBundle\Entity\Equipo")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_equipo", referencedColumnName="id_equipo")
+     * })
+     */
+    private $idEquipo;
+
+
+}

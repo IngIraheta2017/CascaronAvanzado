@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="CidesBundle\Entity\User" table="user">
+    <indexes>
+      <index name="FK_Association_21" columns="id_equipo"/>
+    </indexes>
+    <id name="idUser" type="integer" column="id_user">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombreCompleto" type="string" column="nombre_completo" length="254" nullable="false"/>
+    <field name="cargoInstitucional" type="string" column="cargo_institucional" length="254" nullable="false"/>
+    <field name="userName" type="string" column="user_name" length="32" nullable="false"/>
+    <field name="password" type="string" column="password" length="254" nullable="false"/>
+    <field name="email" type="string" column="email" length="254" nullable="false"/>
+    <field name="facultadPertenece" type="string" column="facultad_pertenece" length="254" nullable="false"/>
+    <field name="idioma" type="string" column="idioma" length="254" nullable="true"/>
+    <field name="preparacionAcademica" type="string" column="preparacion_academica" length="254" nullable="true"/>
+    <field name="capacitacion" type="string" column="capacitacion" length="254" nullable="true"/>
+    <field name="publicacion" type="text" column="publicacion" nullable="true"/>
+    <field name="isAgree" type="smallint" column="is_agree" nullable="false"/>
+    <field name="createAct" type="date" column="create_act" nullable="false"/>
+    <field name="updateAct" type="date" column="update_act" nullable="false"/>
+    <field name="ponencia" type="string" column="ponencia" length="254" nullable="true"/>
+    <many-to-one field="idEquipo" target-entity="Equipo">
+      <join-columns>
+        <join-column name="id_equipo" referenced-column-name="id_equipo"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

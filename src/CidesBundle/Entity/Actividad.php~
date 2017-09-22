@@ -1,0 +1,100 @@
+<?php
+
+namespace CidesBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Actividad
+ *
+ * @ORM\Table(name="actividad", indexes={@ORM\Index(name="FK_Association_10", columns={"id_act_nivel"}), @ORM\Index(name="FK_Association_22", columns={"id_user"}), @ORM\Index(name="FK_Association_25", columns={"id_act_predecesora"}), @ORM\Index(name="FK_Association_8", columns={"id_proyecto"})})
+ * @ORM\Entity
+ */
+class Actividad
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=64, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_inicio", type="datetime", nullable=false)
+     */
+    private $fechaInicio;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_fin", type="datetime", nullable=false)
+     */
+    private $fechaFin;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="duracion", type="integer", nullable=false)
+     */
+    private $duracion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="string", length=254, nullable=true)
+     */
+    private $descripcion;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_actividad", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idActividad;
+
+    /**
+     * @var \CidesBundle\Entity\User
+     *
+     * @ORM\ManyToOne(targetEntity="CidesBundle\Entity\User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id_user")
+     * })
+     */
+    private $idUser;
+
+    /**
+     * @var \CidesBundle\Entity\Actividad
+     *
+     * @ORM\ManyToOne(targetEntity="CidesBundle\Entity\Actividad")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_act_predecesora", referencedColumnName="id_actividad")
+     * })
+     */
+    private $idActPredecesora;
+
+    /**
+     * @var \CidesBundle\Entity\Proyecto
+     *
+     * @ORM\ManyToOne(targetEntity="CidesBundle\Entity\Proyecto")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_proyecto", referencedColumnName="id_proyecto")
+     * })
+     */
+    private $idProyecto;
+
+    /**
+     * @var \CidesBundle\Entity\Actividad
+     *
+     * @ORM\ManyToOne(targetEntity="CidesBundle\Entity\Actividad")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_act_nivel", referencedColumnName="id_actividad")
+     * })
+     */
+    private $idActNivel;
+
+
+}

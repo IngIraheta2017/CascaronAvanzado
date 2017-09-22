@@ -1,0 +1,24 @@
+permiso_index:
+    path:     /show
+    defaults: { _controller: "CidesBundle:Permiso:index" }
+    methods:  GET
+
+permiso_show:
+    path:     /{idPermiso}/show
+    defaults: { _controller: "CidesBundle:Permiso:show" }
+    methods:  GET
+
+permiso_new:
+    path:     /new
+    defaults: { _controller: "CidesBundle:Permiso:new" }
+    methods:  [GET, POST]
+
+permiso_edit:
+    path:     /{idPermiso}/edit
+    defaults: { _controller: "CidesBundle:Permiso:edit" }
+    methods:  [GET, POST]
+
+permiso_delete:
+    path:     /{idPermiso}/delete
+    defaults: { _controller: "CidesBundle:Permiso:delete" }
+    methods:  DELETE

@@ -1,0 +1,27 @@
+cides_menu:
+    resource: "@CidesBundle/Resources/config/routing/menuitem.yml"
+    prefix:   /menu
+cides_permiso:
+        resource: "@CidesBundle/Resources/config/routing/permiso.yml"
+        prefix:   /permiso
+cides_rol:
+        resource: "@CidesBundle/Resources/config/routing/rol.yml"
+        prefix:   /rol
+
+
+cides_homepage:
+    path:     /
+    defaults: { _controller: CidesBundle:Portada:index }
+cides_homepage_login:
+    path:     /login
+    defaults: { _controller: CidesBundle:User:index }
+cides_homepage_registro:
+    path:     /registro
+    defaults: { _controller: CidesBundle:User:add }
+cides_homepage_create:
+    path:     /registro/create
+    defaults: { _controller: CidesBundle:User:create }
+    methods:  POST
+cides_homepage_proyecto:
+    path:     /proyecto
+    defaults: { _controller: CidesBundle:Proyecto:index }

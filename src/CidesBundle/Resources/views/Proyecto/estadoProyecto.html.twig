@@ -1,0 +1,222 @@
+
+{% extends 'base1.html.twig' %}
+{% block body %}
+<section id="container" >
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+            <!--state overview start-->
+            <div class="row state-overview">
+                <div class="col-md-3 col-lg-3 col-sm-6">
+                    <section class="panel">
+                        <div class="symbol terques">
+                            <i class="icon-book"></i>
+                        </div>
+                        <div class="value">
+                            <h1 class="count">
+                                10
+                            </h1>
+                            <p>Nuevos</p>
+                        </div>
+                      <div class="btn-group btn-group-justified">
+                                <a class="btn btn-success" href="#">Ver</a>
+                      </div>
+                    </section>
+                </div>
+                <div class="col-md-3 col-lg-3 col-sm-6">
+                    <section class="panel">
+                        <div class="symbol yellow">
+                            <i class="icon-angle-up"></i>
+                        </div>
+                        <div class="value">
+                            <h1 class=" count2">
+                                7
+                            </h1>
+                            <p>En Revision</p>
+                        </div>
+                        <div class="btn-group btn-group-justified">
+                                <a class="btn btn-success" href="#">Ver</a>
+                       </div>
+                    </section>
+                </div>
+                <div class="col-md-3 col-lg-3 col-sm-6">
+                    <section class="panel">
+                        <div class="symbol blue ">
+                            <i class="icon-check"></i>
+                        </div>
+                        <div class="value">
+                            <h1 class=" count3">
+                                2
+                            </h1>
+                            <p>Aprobados</p>
+                        </div>
+                        <div class="btn-group btn-group-justified">
+                                <a class="btn btn-success" href="#">Ver</a>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-3 col-lg-3 col-sm-6">
+                    <section class="panel">
+                        <div class="symbol red">
+                            <i class="icon-circle"></i>
+                        </div>
+                        <div class="value">
+                            <h1 class=" count4">
+                                5
+                            </h1>
+                            <p>Denegados</p>
+                        </div>
+                        <div class="btn-group btn-group-justified">
+                                <a class="btn btn-success" href="#">Ver</a>
+                      </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container-fluid col-lg-12 col-sm-12" >
+            <h2 class="text-center"> Proyectos Nuevos</h2>
+              <div class="row state-overview">
+                 <div class="col-md-6 col-sm-12">
+                    <section class="panel">
+                        <div class="symbol green">
+                           <i> <span class="glyphicon glyphicon-dashboard" aria-hidden="true"><h2>Química</h2></span></i>
+                        </div>
+                        <div class="value">
+                          <h4> Nanocompuestos de matriz polimérica</h4>
+                          <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-warning btn-group-justified"
+                          style="font-weight: bold;">Revisar</button>
+                          <button data-toggle="modal" data-target="#observacionModal" class="btn btn-info btn-group-justified"
+                            style="font-weight: bold;">Agregar Observaciones</button>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <section class="panel">
+                        <div class="symbol green">
+                           <i> <span class="glyphicon glyphicon-dashboard" aria-hidden="true"><h2>Biología</h2></span></i>
+                        </div>
+                        <div class="value">
+                          <h3> Nanocompuestos de matriz polimérica</h3>
+                          <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-warning btn-group-justified"
+                          style="font-weight: bold;">Revisar</button>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <section class="panel">
+                        <div class="symbol green">
+                           <i> <span class="glyphicon glyphicon-dashboard" aria-hidden="true"><h2>Física</h2></span></i>
+                        </div>
+                        <div class="value">
+                          <h3> Manejo de cultivos  por nitratos en suelos</h3>
+                          <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-warning btn-group-justified"
+                          style="font-weight: bold;">Revisar</button>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <section class="panel">
+                        <div class="symbol green">
+                           <i> <span class="glyphicon glyphicon-dashboard" aria-hidden="true"><h2>Informática</h2></span></i>
+                        </div>
+                        <div class="value">
+                          <h3> Proyecto de Gestión de proyectos para CIDES</h3>
+                          <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-warning btn-group-justified"
+                          style="font-weight: bold;">Revisar</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+      </div>
+            <div class="col-lg-12 col-sm-12">
+            <section class="panel">
+
+<!-- line modal -->
+<div class="modal fade" id="squarespaceModal" tabindex="1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <h3 class="modal-title" id="lineModalLabel">Nombre del Proyecto</h3>
+  </div>
+ <div class="modal-body">
+
+   <textarea class="form-control" id="ta1" rows="1" placeholder="Nombre del Proyecto"></textarea><br>
+   <textarea class="form-control" id="ta2" rows="1" placeholder="Tema del Proyecto"></textarea><br>
+   <textarea class="form-control" id="ta3" rows="1" placeholder="Objetivos del Proyecto"></textarea><br>
+   <textarea class="form-control" id="ta4" rows="1" placeholder="Justificacion del Proyecto"></textarea><br>
+   <textarea class="form-control" id="ta5" rows="1" placeholder="Resultados Esperados"></textarea><br>
+   <textarea class="form-control" id="ta6" rows="1" placeholder="Recursos Necesarios"></textarea><br>
+   <textarea class="form-control" id="ta7" rows="1" placeholder="Indicadores del Proyecto"></textarea><br>
+
+   <div class="form-group">
+     <label class="col-md-4 control-label" for="aar">Seleccionar Estado del Proyecto</label>
+     <div class="col-md-4">
+       <select id="aar" name="aar" class="form-control">
+         <option value="">---Seleccionar---</option>
+         <option value="">Aprobado</option>
+         <option value="">Denegado</option>
+         <option value="">En Revisión</option>
+       </select>
+     </div>
+   </div>
+
+  </div>
+  <div class="panel-body">
+        <br>
+        <a class="btn btn-success btn-lg" href="#">Guardar</a>
+
+</div>
+  <div class="modal-footer">
+        CIDES 2017
+  </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal Observacion -->
+<div class="modal fade" id="observacionModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+      <h3 class="modal-title" id="lineModalLabel">Observaciones del Proyecto</h3>
+    </div>
+    <div class="modal-body">
+    <form>
+        <div class="form-group">
+              <label for="nombreProy">Observación de:</label>
+              <textarea class="form-control" id="ta1" placeholder="Ej. Justificación del Proyecto" rows="1"></textarea>
+        </div>
+        <div class="form-group">
+        <label for="comentarios">Descripción</label>
+        <textarea class="form-control" id="ta8" rows="3"></textarea>
+
+        <div class="panel-body">
+          <div class="text-center">
+              <a class="btn btn-success btn-lg" href="#">Guardar</a>
+          </div>
+       </div>
+
+      </div>
+    </form>
+
+   </div>
+
+   <div class="modal-footer">
+     CIDES 2017
+  </div>
+  </div>
+ </div>
+</div>
+
+
+
+
+
+
+
+{%endblock%}

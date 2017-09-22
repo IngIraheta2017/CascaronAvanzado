@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+  ¡Registrate!
+  {% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+   <link rel="stylesheet" href="{{ asset('public/css/signin.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+            {{ form_start(form,  { 'attr' : {'class' : 'form-signin'} }) }}
+            <h2 class="form-signin-heading">Crea una cuenta</h2>
+            <div class="login-wrap">
+            <p>Completa los siguientes campos para crear una cuenta en CIDES.</p>
+            {{ form_widget(form.nombreCompleto, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Nombre Completo'} }) }}
+            <span class="text-danger">
+            {{ form_errors(form.nombreCompleto) }}
+            </span>
+
+            {{ form_widget(form.cargoInstitucional, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Cargo Institucional'} }) }}
+            <span class="text-danger">
+            {{ form_errors(form.cargoInstitucional) }}
+            </span>
+
+            {{ form_widget(form.email, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Correo electrónico'} }) }}
+            <span class="text-danger">
+            {{ form_errors(form.email) }}
+            </span>
+
+            {{ form_widget(form.password, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Contraseña'} }) }}
+            <span class="text-danger">
+            {{ form_errors(form.password) }}
+            </span>
+
+            {{ form_widget(form.password, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Reescribe tu contraseña'} }) }}
+            <span class="text-danger">
+            {{ form_errors(form.password) }}
+            </span>
+            {{ form_widget(form.isAgree) }}
+            Estoy de acuerdo con los términos de servicio
+            y políticas de privacidad.
+						<span class="text-danger">{{ form_errors(form.isAgree) }}
+            </span>
+
+            {{ form_widget(form.save, {'label' : 'Enviar', 'attr': {'class': 'btn btn-lg btn-login btn-block  '}}) }}
+            <div class="registration">
+                ¿Ya posees una cuenta?
+                <a href="{{asset('login')}}" >
+                    Iniciar sesión
+                </a>
+            </div>
+            </div>
+            {{ form_end(form) }}
+
+
+
+
+
+    </div>
+    {% block footer %}
+
+    {% endblock %}
+
+{% endblock %}
+{% block javascripts %}
+<script src="{{asset('public/js/jquery.js')}}"></script>
+<script src="{{asset('public/js/bootstrap.min.js')}}"></script>
+{% endblock %}

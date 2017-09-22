@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+  ¡Login!
+  {% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+   <link rel="stylesheet" href="{{ asset('public/css/login.css') }}">
+{% endblock %}
+
+{% block body %}
+<br>
+<hr>
+<h1 align="center" style="color:#00cccc;">CIDES</h1>
+<hr>
+<br>
+<form>
+  <center>
+    <div id="circle">
+      <h1 id="blinking" style="color: #00cccc;">Inicia sesión</h1>
+      <div id="box">
+      <form>
+        <input type="text" name="uname" id="in" placeholder="Usuario" required="true"><br>
+        <input type="password" name="pwrd" placeholder="Contraseña" id="in" required="true">
+        <input type="submit" name="login" value="Login" id="inBtn" style="color:white;">
+
+      </form>
+      </div>
+    </div>
+  </center>
+
+</form>
+
+
+
+
+{% endblock %}
+{% block footer %}
+<hr>
+  <p id="copy">CIDES 2017 © todos los derechos reservados</p>
+<hr>
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{asset('public/js/jquery.js')}}"></script>
+<script src="{{asset('public/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('public/js/login.js')}}"></script>
+{% endblock %}

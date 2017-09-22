@@ -1,0 +1,24 @@
+menu_index:
+    path:     /
+    defaults: { _controller: "CidesBundle:Menuitem:index" }
+    methods:  GET
+
+menu_show:
+    path:     /{idMenuitem}/show
+    defaults: { _controller: "CidesBundle:Menuitem:show" }
+    methods:  GET
+
+menu_new:
+    path:     /new
+    defaults: { _controller: "CidesBundle:Menuitem:new" }
+    methods:  [GET, POST]
+
+menu_edit:
+    path:     /{idMenuitem}/edit
+    defaults: { _controller: "CidesBundle:Menuitem:edit" }
+    methods:  [GET, POST]
+
+menu_delete:
+    path:     /{idMenuitem}/delete
+    defaults: { _controller: "CidesBundle:Menuitem:delete" }
+    methods:  DELETE
